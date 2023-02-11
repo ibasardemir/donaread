@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "641238814859",
+    "firebase_url": "https://kitapla-2aa9d-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "kitapla-2aa9d",
+    "storage_bucket": "kitapla-2aa9d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641238814859:android:1a6a586cd0d9129d0d048e",
+        "android_client_info": {
+          "package_name": "com.example.sampleproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641238814859-b401l5gp6pvfkvtb10o6vg8mgpc5qi3c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwpIOVHMeHPbpic4Sd1002QsLrH3fNIlM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641238814859-b401l5gp6pvfkvtb10o6vg8mgpc5qi3c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
