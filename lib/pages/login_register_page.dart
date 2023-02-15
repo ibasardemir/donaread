@@ -74,6 +74,7 @@ class LoginPageState extends State<LoginPage> {
       onPressed: () {
         setState(() {
           isLogin = !isLogin;
+          errorMessage= "";
         });
       },
       child: Text(isLogin ? "Register instead" : "Login instead"),
