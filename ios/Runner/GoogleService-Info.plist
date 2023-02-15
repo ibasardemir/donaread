@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>641238814859-ogupgn7drbp10c165tn1n8o88t01pagr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.641238814859-ogupgn7drbp10c165tn1n8o88t01pagr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDiO95BtdhNBEmy42hO389wAePiYU3WYX4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>641238814859</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.sampleproject</string>
+	<key>PROJECT_ID</key>
+	<string>kitapla-2aa9d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kitapla-2aa9d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:641238814859:ios:d6473ad4a761c6050d048e</string>
+	<key>DATABASE_URL</key>
+	<string>https://kitapla-2aa9d-default-rtdb.europe-west1.firebasedatabase.app</string>
+</dict>
+</plist>
