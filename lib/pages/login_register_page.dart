@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../auth.dart';
@@ -48,10 +50,13 @@ class LoginPageState extends State<LoginPage> {
 
   Widget _entryField(
     String title,
-    TextEditingController controller,
+    TextEditingController controller,bool paso
   ) {
     return TextField(
         controller: controller,
+        obscureText: paso,
+        enableSuggestions: paso!,
+        autocorrect: paso!,
         decoration: InputDecoration(
           labelText: title,
         ));
@@ -95,8 +100,8 @@ class LoginPageState extends State<LoginPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              _entryField("email", _controllerEmail),
-              _entryField("password", _controllerPassword),
+              _entryField("email", _controllerEmail,false),
+              _entryField("password", _controllerPassword,true),
               _errorMessage(),
               _submitButton(),
               _loginOrRegistrationButton(),
