@@ -55,8 +55,8 @@ class LoginPageState extends State<LoginPage> {
     return TextField(
         controller: controller,
         obscureText: paso,
-        enableSuggestions: paso!,
-        autocorrect: paso!,
+        enableSuggestions: !paso,
+        autocorrect: !paso,
         decoration: InputDecoration(
           labelText: title,
         ));
