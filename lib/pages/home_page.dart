@@ -1,11 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:sampleproject/auth.dart';
+import 'package:sampleproject/managers/profilemanager.dart';
+import '../datas/profile.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
-
+  final Profilemanager pmanager = Profilemanager();
   final User? user = Auth().currentUser;
+  Profile profile = Profilemanager.profile ?? Profile().upload() as Profile;
 
   Future<void> signOut() async {
     await Auth().signOut();
@@ -17,7 +20,7 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _userUid() {
-    return Text(user?.email ?? "User email");
+    return Text("Merhaba, ${profile.name}");
     //!Email
   }
 
