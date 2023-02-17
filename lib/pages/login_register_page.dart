@@ -3,6 +3,8 @@ import 'dart:ffi';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../auth.dart';
+import "../managers/profilemanager.dart";
+import "../datas/profile.dart";
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -24,6 +26,7 @@ class LoginPageState extends State<LoginPage> {
         email: _controllerEmail.text,
         password: _controllerPassword.text,
       );
+      Profilemanager.load();
     } on FirebaseException catch (e) {
       setState(() {
         errorMessage = e.message;
@@ -37,6 +40,7 @@ class LoginPageState extends State<LoginPage> {
         email: _controllerEmail.text,
         password: _controllerPassword.text,
       );
+      Profilemanager.register(Profile("basar",Auth().currentUser?.uid??"","ist"));
     } on FirebaseException catch (e) {
       setState(() {
         errorMessage = e.message;
