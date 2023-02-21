@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import 'uploadpage.dart';
 
+"""
+class Book {
+  final String name;
+  final String isbn;
+  final String condition;
 
+  Book({required this.name, required this.isbn, this.condition = 'Unknown'});
+}
+"""
+  
 class FirstPage extends StatefulWidget {
   final List<Book> books;
 
