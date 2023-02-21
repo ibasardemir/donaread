@@ -11,6 +11,23 @@ class Book {
 }
 """
   
+  """
+  
+class _MyAppState extends State<MyApp> {
+  String buttonName = "Upload";
+  int currentIndex = 0;
+  List<Book> books = []; // Add this line
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: FirstPage(books: books),
+    );
+  }
+}
+  """
+  
 class FirstPage extends StatefulWidget {
   final List<Book> books;
 
