@@ -92,7 +92,7 @@ class _FirstPageState extends State<FirstPage> {
                         subtitle: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(widget.books[index].isbn),
+                            Text('ISBN: ${widget.books[index].isbn}'),
                             SizedBox(height: 4),
                             Text('Condition: ${widget.books[index].condition}'),
                           ],
