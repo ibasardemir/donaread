@@ -1,4 +1,6 @@
 import 'package:firebase_database/firebase_database.dart';
+import 'package:sampleproject/datas/profile.dart';
+
 class Connector {
 
   final FirebaseDatabase database = FirebaseDatabase.instance;
@@ -7,8 +9,9 @@ class Connector {
   Future<void> ws(String path, var message) async{
    await ref.update({path:message});
   }
-  Future<Object?> rs(String path) async{
-    final snapshot = await ref.child(path).get();
-    return snapshot.value;
+  Future<dynamic> rs(String path) async{
+    //final snapshot = await ref.child(path).get();
+    final event = await ref.child("profile/jDk3CgeBY5YufvCKHhKqSkYET6L2").once(DatabaseEventType.value);
+    return event.snapshot.value;
   }
 }

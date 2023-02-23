@@ -1,17 +1,8 @@
 import 'package:flutter/material.dart';
 import 'uploadpage.dart';
+import '../datas/kitap.dart';
 
-"""
-class Book {
-  final String name;
-  final String isbn;
-  final String condition;
-
-  Book({required this.name, required this.isbn, this.condition = 'Unknown'});
-}
-"""
-  
-  """
+    /*
   
 class _MyAppState extends State<MyApp> {
   String buttonName = "Upload";
@@ -26,12 +17,14 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-  """
+  */
+  
   
 class FirstPage extends StatefulWidget {
-  final List<Book> books;
+  
+  final List<Kitap> books;
 
-  FirstPage({required this.books, Key? key}) : super(key: key);
+  const FirstPage({required this.books, Key? key}) : super(key: key);
 
   @override
   State<FirstPage> createState() => _FirstPageState();
@@ -43,6 +36,7 @@ class _FirstPageState extends State<FirstPage> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         shadowColor: Colors.green,
@@ -63,10 +57,10 @@ class _FirstPageState extends State<FirstPage> {
                           Navigator.of(context).push(
                             MaterialPageRoute(builder: (BuildContext context) {
                               return UploadPage(
-                                onSubmit: (name, isbn, condition) {
+                                onSubmit: (name, isbn, condition,) {
                                   // Add the uploaded book to the list
                                   setState(() {
-                                    widget.books.add(Book(
+                                    widget.books.add(Kitap(
                                         name: name,
                                         isbn: isbn,
                                         condition: condition));

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:somethingtolearn/main.dart';
+import '../datas/kitap.dart';
 
 
 class UploadPage extends StatefulWidget {
-  final List<Book> books;
+  final List<Kitap> books;
   final void Function(String name, String isbn, String condition) onSubmit;
 
   const UploadPage({required this.books, required this.onSubmit, Key? key})

@@ -6,9 +6,9 @@ import '../datas/profile.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
-  final Profilemanager pmanager = Profilemanager();
   final User? user = Auth().currentUser;
-  Profile profile = Profilemanager.profile ?? Profile().upload() as Profile;
+  final Profilemanager pmanager = Profilemanager();
+  Profile? profile = Profilemanager.profile;
 
   Future<void> signOut() async {
     await Auth().signOut();
@@ -19,8 +19,9 @@ class HomePage extends StatelessWidget {
     //!Başlık
   }
 
-  Widget _userUid() {
-    return Text("Merhaba, ${profile.name}");
+  Widget _userUid(String? text)  {
+    //final Profile? pp = pmanager.getpro();
+    return Text("Merhaba, $text");
     //!Email
   }
 
@@ -45,7 +46,10 @@ class HomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  _userUid(),
+                   FutureBuilder(builder: (context, AsyncSnapshot<String> text) {
+                    return _userUid(text.data);
+                  },future: pmanager.getname(),
+                  ),
                   _signOutButton(),
                 ])));
   }

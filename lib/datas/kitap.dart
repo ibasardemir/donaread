@@ -1,20 +1,18 @@
-// variables: id name isbn user user_location 
+// variables: id name isbn user user_location condition
 class Kitap {
-  late int id;
-  late String name;
-  late int isbn; late String uid; late String user_Location;
-  Map data={};
-  //constructor
-  Kitap(this.id,this.name, this.isbn, this.uid,  this.user_Location){
-    //to be written
-  }
-  Kitap.fromweb(Map data){
-    id = data["id"];
-    name = data["name"];
-    isbn = data["isbn"];
-    uid = data["uid"];
-    user_Location = data["user_location"];
-
-  }
+  final int id;
+  final String name;
+  final int isbn; final String uid; 
+  final String userLocation;
+  final String condition;
+  //constructors
+  Kitap(this.id,this.name, this.isbn, this.uid,  this.userLocation,this.condition);
+  Kitap.fromweb(Map data):
+    id = data["id"],
+    name = data["name"],
+    isbn = data["isbn"],
+    uid = data["uid"],
+    userLocation = data["user_location"],
+    condition = data["condition"];
 }
 
