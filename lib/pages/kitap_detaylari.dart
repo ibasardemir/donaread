@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'kitap.dart';
 
 class BookDetailsPage extends StatefulWidget {
   final BookModel book;
