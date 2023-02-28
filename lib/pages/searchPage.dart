@@ -2,14 +2,27 @@ import 'package:flutter/material.dart';
 import 'kitap_detaylari.dart';
 import 'kitap.dart';
 
+/*
+class BookModel{
+  String? book_title;
+  String? sahip;
+  double? mesafe;
+  String? il;
+  String? bagis_turu;
+  String? kitap_durumu;
+  String? foto;
+  
+  BookModel(this.sahip,
+  this.book_title,
+  this.mesafe,
+  this.il,
+  this.bagis_turu,
+  this.kitap_durumu,
+  this.foto);
 
-void main(){
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: SearchPageTo(),
-  ));
 }
 
+*/
 class SearchPageTo extends StatefulWidget {
   const SearchPageTo({Key? key}) : super(key: key);
 
