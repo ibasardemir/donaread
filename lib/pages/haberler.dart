@@ -6,12 +6,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 import 'habericerigi.dart';
 import 'package:haberler/haberlisteler.dart';
 //habertek
-void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: FirstPageTo(),
-  ));
-}
+
 
 
 
