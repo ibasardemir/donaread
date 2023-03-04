@@ -1,4 +1,6 @@
 
+import 'package:flutter/material.dart';
+import '../managers/profilemanager.dart';
 class ProfilePage extends StatelessWidget {
   final int booksshared;
   final int bookstaken;
@@ -9,7 +11,7 @@ class ProfilePage extends StatelessWidget {
   double savedcarbonemission = 0.5;
   double savedwater = 2.4;
 
-  ProfilePage({
+  ProfilePage({super.key, 
     this.booksshared = 100,
     this.bookstaken = 50,
     this.booksdonated = 233,
@@ -25,7 +27,7 @@ class ProfilePage extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center, // changed to center
               children: [
@@ -33,30 +35,30 @@ class ProfilePage extends StatelessWidget {
                   radius: 70,
                   backgroundImage: NetworkImage(profileImageUrl),
                 ),
-                SizedBox(width: 16.0), // added SizedBox to add some space
+                const SizedBox(width: 16.0), // added SizedBox to add some space
                 Container(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
                     color: Colors.amber,
                     borderRadius: BorderRadius.circular(16.0),
                   ),
                   child: Text(
                     'Tokens: $tokens',
-                    style: TextStyle(color: Colors.black),
+                    style: const TextStyle(color: Colors.black),
                   ),
                 ),
               ],
             ),
           ),
           Container(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: Column(
                     children: [
-                      Text(
+                      const Text(
                         'Books shared',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
@@ -67,7 +69,7 @@ class ProfilePage extends StatelessWidget {
                 Expanded(
                   child: Column(
                     children: [
-                      Text(
+                      const Text(
                         'Books taken',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
@@ -78,7 +80,7 @@ class ProfilePage extends StatelessWidget {
                 Expanded(
                   child: Column(
                     children: [
-                      Text(
+                      const Text(
                         'Books donated',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
@@ -97,22 +99,19 @@ class ProfilePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start, // add this line
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         '\n   You Saved!',
                         style: TextStyle(fontSize: 30),
                       ),
                       Text(
-                          "\n     ${savedpapers * totalbook} " +
-                              'papers are saved',
-                          style: TextStyle(fontSize: 18)),
+                          "\n     ${savedpapers * totalbook} " 'papers are saved',
+                          style: const TextStyle(fontSize: 18)),
                       Text(
-                          "\n     ${savedcarbonemission * totalbook} " +
-                              'kg of CO2 emission is prevented',
-                          style: TextStyle(fontSize: 18)),
+                          "\n     ${savedcarbonemission * totalbook} " 'kg of CO2 emission is prevented',
+                          style: const TextStyle(fontSize: 18)),
                       Text(
-                          "\n     ${savedcarbonemission * totalbook} " +
-                              'L of industrial water is prevented',
-                          style: TextStyle(fontSize: 18)),
+                          "\n     ${savedcarbonemission * totalbook} " 'L of industrial water is prevented',
+                          style: const TextStyle(fontSize: 18)),
                     ],
                   ),
                 ),

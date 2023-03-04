@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'kitap.dart';
+import '../datas/kitap.dart';
 
 class BookDetailsPage extends StatefulWidget {
-  final BookModel book;
+  final Kitap book;
 
   BookDetailsPage({required this.book});
 
@@ -15,10 +15,10 @@ class _BookDetailsPageState extends State<BookDetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.book.book_title!),
+        title: Text(widget.book.name),
         backgroundColor: Colors.green,
       ),
-      body: Center(
+      body: const Center(
         child: Text('Book details here'),
       ),
     );

@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'kitap_detaylari.dart';
-import 'kitap.dart';
+import 'Kitap_detaylari.dart';
+import '../datas/kitap.dart';
 
 /*
-class BookModel{
-  String? book_title;
-  String? sahip;
+class Kitap{
+  String? name;
+  String? uid;
   double? mesafe;
   String? il;
   String? bagis_turu;
-  String? kitap_durumu;
+  String? condition;
   String? foto;
   
-  BookModel(this.sahip,
-  this.book_title,
+  Kitap(this.uid,
+  this.name,
   this.mesafe,
   this.il,
   this.bagis_turu,
-  this.kitap_durumu,
+  this.condition,
   this.foto);
 
 }
@@ -40,22 +40,18 @@ class _SearchPageToState extends State<SearchPageTo> {
 
 
   //
-  static List<BookModel> main_books_list = [
-    BookModel('Liana','Küçük Yaprağın Öyküsü', 0.3 , 'İstanbul', 'Bağış', 'İyi','https://cdn.pixabay.com/photo/2023/01/31/05/59/zebra-7757193_960_720.jpg'),
-    BookModel('Başar','Küçük Prens', 0.7, 'İstanbul', 'Değiş-Tokuş', 'İyi','https://upload.wikimedia.org/wikipedia/tr/thumb/f/f5/Kucukprens.jpg/1200px-Kucukprens.jpg'),
-    BookModel('Alen','Tutunamayanlar', 0.9, 'İstanbul', 'Ödünç verme', 'Orta','https://upload.wikimedia.org/wikipedia/commons/2/28/Oguzataybust.png'),
-    BookModel('Aksel','Kürk Mantolu Madonna', 1.1, 'İstanbul', 'Bağış', 'Kötü','https://upload.wikimedia.org/wikipedia/commons/1/14/K%C3%BCrk_Mantolu_Madonna_Kapak.png'),
-    BookModel('Aksel','The Return of Sherlock Holmes', 1.3, 'İstanbul', 'Değiş-Tokuş', 'Orta','https://upload.wikimedia.org/wikipedia/commons/5/55/The_Return_of_Sherlock_Holmes_cover_1905.jpg')
+  static List<Kitap> main_books_list = [
+    Kitap(id:1,name:'Küçük Yaprağın Öyküsü',userLocation: 'İstanbul', condition:'İyi',isbn:0,uid:""/*'https://cdn.pixabay.com/photo/2023/01/31/05/59/zebra-7757193_960_720.jpg'*/)
   ];
 
 
-  List<BookModel> display_list = List.from(main_books_list);
+  List<Kitap> display_list = List.from(main_books_list);
  /////
 
 
   void updateList(String value){
     setState(() {
-      display_list = main_books_list.where((element) => element.book_title!.toLowerCase().contains(value.toLowerCase())).toList();
+      display_list = main_books_list.where((element) => element.name.toLowerCase().contains(value.toLowerCase())).toList();
     });
   }
 
@@ -64,26 +60,26 @@ class _SearchPageToState extends State<SearchPageTo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: const Text('BookDonate',style: TextStyle(
+        title: const Center(child: Text('BookDonate',style: TextStyle(
          fontWeight: FontWeight.bold,
          
           color: Colors.black),)
         ),
-        leading: Icon(Icons.book, color: Colors.black,),
+        leading: const Icon(Icons.book, color: Colors.black,),
         backgroundColor: Colors.green,
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.info_outline, color: Colors.black), 
+            icon: const Icon(Icons.info_outline, color: Colors.black), 
             onPressed: () { 
               showDialog(
                 context: context,
                 builder: (BuildContext context) {
                   return AlertDialog(
-                    title: Text('BookDonate'),
-                    content: Text('İşte biz bu yüzden varız.'),
+                    title: const Text('BookDonate'),
+                    content: const Text('İşte biz bu yüzden varız.'),
                     actions: <Widget>[
                       TextButton(
-                        child: Text('OK'),
+                        child: const Text('OK'),
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
@@ -102,13 +98,13 @@ class _SearchPageToState extends State<SearchPageTo> {
       body: 
       //Search
       currentIndex ==0?
-      Padding(padding: EdgeInsets.all(16),
+      Padding(padding: const EdgeInsets.all(16),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start ,
         crossAxisAlignment: CrossAxisAlignment.start, 
         children: [ 
            
-          Text(
+          const Text(
           'Kitap Ara', 
           
           style: TextStyle(
@@ -117,7 +113,7 @@ class _SearchPageToState extends State<SearchPageTo> {
             fontSize: 22.0),
             ),
             
-            SizedBox(
+            const SizedBox(
               height: 20.0,
               
             ),
@@ -132,12 +128,12 @@ class _SearchPageToState extends State<SearchPageTo> {
                   ),
                   hintText: 'Cesur Yeni Dünya',
                    
-                  prefixIcon: Icon(Icons.search),prefixIconColor: Colors.black,
+                  prefixIcon: const Icon(Icons.search),prefixIconColor: Colors.black,
                   suffixIcon:
          
          
           IconButton(
-            icon: Icon(Icons.filter_alt_outlined, color: Colors.black), 
+            icon: const Icon(Icons.filter_alt_outlined, color: Colors.black), 
             onPressed: () { 
 
 
@@ -149,14 +145,14 @@ class _SearchPageToState extends State<SearchPageTo> {
 
 
     return AlertDialog(
-      title: Text('Filtrele'),
+      title: const Text('Filtrele'),
       content: StatefulBuilder(
         builder: (BuildContext context, StateSetter setState) {
           return Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               CheckboxListTile(
-                title: Text('İyi'),
+                title: const Text('İyi'),
                 value: isGoodChecked,
                 onChanged: (newValue) {
                   setState(() {
@@ -166,7 +162,7 @@ class _SearchPageToState extends State<SearchPageTo> {
                 },
               ),
               CheckboxListTile(
-                title: Text('Orta'),
+                title: const Text('Orta'),
                 value: isAverageChecked,
                 onChanged: (newValue) {
                   setState(() {
@@ -175,7 +171,7 @@ class _SearchPageToState extends State<SearchPageTo> {
                 },
               ),
               CheckboxListTile(
-                title: Text('Kötü'),
+                title: const Text('Kötü'),
                 value: isBadChecked,
                 onChanged: (newValue) {
                   setState(() {
@@ -193,7 +189,7 @@ class _SearchPageToState extends State<SearchPageTo> {
             // AlertDialog'da tamam butonuna basıldığında yapılacak işlemler buraya yazılabilir.
             Navigator.of(context).pop();
           },
-          child: Text('Tamam'),
+          child: const Text('Tamam'),
         ),
       ],
     );
@@ -215,11 +211,11 @@ class _SearchPageToState extends State<SearchPageTo> {
 
                   ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               
               Expanded(
-                child: display_list.length == 0
-                 ? Center(child: Text('Sonuç Bulunamadı', style: TextStyle(color: Colors.black,fontSize: 25, fontWeight: FontWeight.bold),),):
+                child: display_list.isEmpty
+                 ? const Center(child: Text('Sonuç Bulunamadı', style: TextStyle(color: Colors.black,fontSize: 25, fontWeight: FontWeight.bold),),):
                 
                 ListView.builder(
                   itemCount: display_list.length,
@@ -237,98 +233,98 @@ class _SearchPageToState extends State<SearchPageTo> {
                     isGoodChecked == false ? 
                     
                     ListTile(
-                      contentPadding: EdgeInsets.all(8.0),  
+                      contentPadding: const EdgeInsets.all(8.0),  
                       title: Text(
-                        display_list[index].book_title!,
-                        style: TextStyle(
+                        display_list[index].name,
+                        style: const TextStyle(
                           color: Colors.black,
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     subtitle: Text(
-                      'Sahip: ${display_list[index].sahip!}\nUzaklık: ${display_list[index].mesafe!}\nİl: ${display_list[index].il!}\nTür: ${display_list[index].bagis_turu!}\nDurumu: ${display_list[index].kitap_durumu!}'               
+                      'uid: ${display_list[index].uid}\nİl: ${display_list[index].userLocation}\nDurumu: ${display_list[index].condition}'               
                   
-                  , style: TextStyle(
+                  , style: const TextStyle(
                       color: Colors.black,
                       fontSize: 15,
                     ),),
-                    leading: Image.network(display_list[index].foto!,
+                    leading: Image.network(display_list[index].foto,
                                           
                     height: 500,),
                     ):
                     
                     
-                    isGoodChecked == true && main_books_list[index].kitap_durumu == 'İyi' ?
+                    isGoodChecked == true && main_books_list[index].condition == 'İyi' ?
                      ListTile(
-                      contentPadding: EdgeInsets.all(8.0),  
+                      contentPadding: const EdgeInsets.all(8.0),  
                       title: Text(
-                        display_list[index].book_title!,
-                        style: TextStyle(
+                        display_list[index].name,
+                        style: const TextStyle(
                           color: Colors.black,
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     subtitle: Text(
-                      'Sahip: ${display_list[index].sahip!}\nUzaklık: ${display_list[index].mesafe!}\nİl: ${display_list[index].il!}\nTür: ${display_list[index].bagis_turu!}\nDurumu: ${display_list[index].kitap_durumu!}'               
+                      'uid: ${display_list[index].uid}\nİl: ${display_list[index].userLocation}\nDurumu: ${display_list[index].condition}'               
                   
-                  , style: TextStyle(
+                  , style: const TextStyle(
                       color: Colors.black,
                       fontSize: 15,
                     ),),
-                    leading: Image.network(display_list[index].foto!,
+                    leading: Image.network(display_list[index].foto,
                                           
                     height: 500,),
                     )
                     
-                    :isAverageChecked == true && main_books_list[index].kitap_durumu == 'Orta' ?
+                    :isAverageChecked == true && main_books_list[index].condition == 'Orta' ?
                       ListTile(
-                      contentPadding: EdgeInsets.all(8.0),  
+                      contentPadding: const EdgeInsets.all(8.0),  
                       title: Text(
-                        display_list[index].book_title!,
-                        style: TextStyle(
+                        display_list[index].name,
+                        style: const TextStyle(
                           color: Colors.black,
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     subtitle: Text(
-                      'Sahip: ${display_list[index].sahip!}\nUzaklık: ${display_list[index].mesafe!}\nİl: ${display_list[index].il!}\nTür: ${display_list[index].bagis_turu!}\nDurumu: ${display_list[index].kitap_durumu!}'               
+                      'uid: ${display_list[index].uid}\nİl: ${display_list[index].userLocation}\nDurumu: ${display_list[index].condition}'               
                   
-                  , style: TextStyle(
+                  , style: const TextStyle(
                       color: Colors.black,
                       fontSize: 15,
                     ),),
-                    leading: Image.network(display_list[index].foto!,
+                    leading: Image.network(display_list[index].foto,
                                           
                     height: 500,),
                     )
                    
-                    :isBadChecked == true && main_books_list[index].kitap_durumu == 'Kötü' ?
+                    :isBadChecked == true && main_books_list[index].condition == 'Kötü' ?
                       ListTile(
-                      contentPadding: EdgeInsets.all(8.0),  
+                      contentPadding: const EdgeInsets.all(8.0),  
                       title: Text(
-                        display_list[index].book_title!,
-                        style: TextStyle(
+                        display_list[index].name,
+                        style: const TextStyle(
                           color: Colors.black,
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     subtitle: Text(
-                      'Sahip: ${display_list[index].sahip!}\nUzaklık: ${display_list[index].mesafe!}\nİl: ${display_list[index].il!}\nTür: ${display_list[index].bagis_turu!}\nDurumu: ${display_list[index].kitap_durumu!}'               
+                      'uid: ${display_list[index].uid}\nİl: ${display_list[index].userLocation}\nDurumu: ${display_list[index].condition}'               
                   
-                  , style: TextStyle(
+                  , style: const TextStyle(
                       color: Colors.black,
                       fontSize: 15,
                     ),),
-                    leading: Image.network(display_list[index].foto!,
+                    leading: Image.network(display_list[index].foto,
                                           
                     height: 500,),
                     )
                    
-                    :SizedBox.shrink()
+                    :const SizedBox.shrink()
 
 
 
@@ -358,12 +354,12 @@ class _SearchPageToState extends State<SearchPageTo> {
            
       //Haber
       :currentIndex==3?
-       Text("Haber")
+       const Text("Haber")
        
        
        
        //Diğer sayfalar
-       :Text('Diğer sayfalar'),//haber
+       :const Text('Diğer sayfalar'),//haber
       
       
      
@@ -373,7 +369,7 @@ class _SearchPageToState extends State<SearchPageTo> {
       
       /////////////////////////////////
      bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             backgroundColor: Colors.green,
             label: 'Ara',

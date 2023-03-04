@@ -5,8 +5,9 @@ class Kitap {
   final int isbn; final String uid; 
   final String userLocation;
   final String condition;
+  final String foto = "https://cdn.pixabay.com/photo/2023/01/31/05/59/zebra-7757193_960_720.jpg";
   //constructors
-  Kitap(this.id,this.name, this.isbn, this.uid,  this.userLocation,this.condition);
+  Kitap({required this.id,required this.name, required this.isbn, required this.uid,  required this.userLocation,required this.condition});
   Kitap.fromweb(Map data):
     id = data["id"],
     name = data["name"],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'uploadpage.dart';
 import '../datas/kitap.dart';
+import "../managers/profilemanager.dart";
 
     /*
   
@@ -46,7 +47,7 @@ class _FirstPageState extends State<FirstPage> {
       body: currentIndex == 2
           ? Column(
               children: [
-                Container(
+                SizedBox(
                   height: 150,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -61,8 +62,11 @@ class _FirstPageState extends State<FirstPage> {
                                   // Add the uploaded book to the list
                                   setState(() {
                                     widget.books.add(Kitap(
+                                        id:DateTime.now().millisecondsSinceEpoch+Profilemanager.profile.hashCode,//sıkıntılı
+                                        uid: Profilemanager.profile?.uid??"", //sıkıntılı
+                                        userLocation: Profilemanager.profile?.uid??"",//sıkıntılı
                                         name: name,
-                                        isbn: isbn,
+                                        isbn: int.parse(isbn),
                                         condition: condition));
                                   });
                                 },
@@ -87,7 +91,7 @@ class _FirstPageState extends State<FirstPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text('ISBN: ${widget.books[index].isbn}'),
-                            SizedBox(height: 4),
+                            const SizedBox(height: 4),
                             Text('Condition: ${widget.books[index].condition}'),
                           ],
                         ),
@@ -97,7 +101,7 @@ class _FirstPageState extends State<FirstPage> {
                 ),
               ],
             )
-          : SizedBox(),
+          : const SizedBox(),
       bottomNavigationBar: BottomNavigationBar(
         // ignore: prefer_const_literals_to_create_immutables
         items: [
