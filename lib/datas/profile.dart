@@ -11,7 +11,7 @@ class Profile {
     uid=user["uid"];
     name = user["name"];
     location=user["location"];
-    token = user["token"];
+    token = user["token"] ?? 1;
   }
   Map upload(){
     Map map ={};

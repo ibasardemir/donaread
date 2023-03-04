@@ -8,27 +8,28 @@ class Profilemanager{
   final String uid = Auth().currentUser?.uid ?? "";
   final Connector connector = Connector();
   static Profile? profile;
-  late Map info;
   
   
   Profilemanager.register(Profile newbie){
     profile = newbie;
 
-    connector.ws("profiles/$newbie.uid", newbie as dynamic);
+    connector.ws("profile/${newbie.uid}", newbie.upload());
   }
   Profilemanager(){
      if (profile==null){
     try {
       //final dynamic n = connector.rs("profile/$uid");
-      connector.rs("profile/$uid").then((Map n) {
-        log("${n} budur");
-      profile= Profile.fromweb(n);
-      } as FutureOr Function(dynamic value));
+      connector.rs("profile/$uid").then((dynamic n) {
+        log("$n @pmanager 23");
+        log("${n["name"]} @pmanager 24");
+      profile = Profile.fromweb(n);
+      log("${profile?.name}");
+      });
       
     //profile= Profile.fromweb(n);
   
 } catch (e) {
- log("$e");
+ log("$e sıkıntı var");
 }
       
     }
