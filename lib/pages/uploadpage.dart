@@ -49,7 +49,7 @@ class _UploadPageState extends State<UploadPage> {
         title: const Text('Upload Page'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Form(
           key: _formKey,
           child: Column(
@@ -57,7 +57,7 @@ class _UploadPageState extends State<UploadPage> {
             children: [
               TextFormField(
                 controller: _nameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Enter book name',
                 ),
                 validator: (value) {
@@ -67,10 +67,10 @@ class _UploadPageState extends State<UploadPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               TextFormField(
                 controller: _isbnController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Enter ISBN',
                 ),
                 validator: (value) {
@@ -80,8 +80,8 @@ class _UploadPageState extends State<UploadPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
-              Text('Book condition:'),
+              const SizedBox(height: 16),
+              const Text('Book condition:'),
               Row(
                 children: [
                   Radio<String>(
@@ -93,7 +93,7 @@ class _UploadPageState extends State<UploadPage> {
                       });
                     },
                   ),
-                  Text('Excellent'),
+                  const Text('Excellent'),
                   Radio<String>(
                     value: 'Good',
                     groupValue: _condition,
@@ -103,7 +103,7 @@ class _UploadPageState extends State<UploadPage> {
                       });
                     },
                   ),
-                  Text('Good'),
+                  const Text('Good'),
                   Radio<String>(
                     value: 'Barely readable',
                     groupValue: _condition,
@@ -113,10 +113,10 @@ class _UploadPageState extends State<UploadPage> {
                       });
                     },
                   ),
-                  Text('Barely readable'),
+                  const Text('Barely readable'),
                 ],
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: _submitForm,
                 child: const Text('Upload'),

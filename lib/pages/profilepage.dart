@@ -91,32 +91,30 @@ class ProfilePage extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            child: Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start, // add this line
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        '\n   You Saved!',
-                        style: TextStyle(fontSize: 30),
-                      ),
-                      Text(
-                          "\n     ${savedpapers * totalbook} " 'papers are saved',
-                          style: const TextStyle(fontSize: 18)),
-                      Text(
-                          "\n     ${savedcarbonemission * totalbook} " 'kg of CO2 emission is prevented',
-                          style: const TextStyle(fontSize: 18)),
-                      Text(
-                          "\n     ${savedcarbonemission * totalbook} " 'L of industrial water is prevented',
-                          style: const TextStyle(fontSize: 18)),
-                    ],
-                  ),
+          Row(
+            children: [
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start, // add this line
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      '\n   You Saved!',
+                      style: TextStyle(fontSize: 30),
+                    ),
+                    Text(
+                        "\n     ${savedpapers * totalbook} " 'papers are saved',
+                        style: const TextStyle(fontSize: 18)),
+                    Text(
+                        "\n     ${savedcarbonemission * totalbook} " 'kg of CO2 emission is prevented',
+                        style: const TextStyle(fontSize: 18)),
+                    Text(
+                        "\n     ${savedcarbonemission * totalbook} " 'L of industrial water is prevented',
+                        style: const TextStyle(fontSize: 18)),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           )
         ],
       ),

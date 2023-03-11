@@ -4,7 +4,7 @@ import '../datas/kitap.dart';
 class BookDetailsPage extends StatefulWidget {
   final Kitap book;
 
-  BookDetailsPage({required this.book});
+  const BookDetailsPage({super.key, required this.book});
 
   @override
   _BookDetailsPageState createState() => _BookDetailsPageState();

@@ -34,16 +34,16 @@ Future<void> _launchUrl(String url) async {
 
 
       static List<Habericerigi> habericerikleri1 = [    
-    Habericerigi(haberResim:NetworkImage('https://www.akhisarhaber.net/images/haberler/2023/02/depremzede-cocuklar-icin-oyunca-ve-kitap-bagis-kampanyasi-basladi-4867.png'),
+    Habericerigi(haberResim:const NetworkImage('https://www.akhisarhaber.net/images/haberler/2023/02/depremzede-cocuklar-icin-oyunca-ve-kitap-bagis-kampanyasi-basladi-4867.png'),
     haberBaslik: 'Depremzede Çocuklar İçin Oyuncak Ve Kitap Bağış Kampanyası Başladı',
     url: 'www.cumhuriyet.com.tr/turkiye/depremzede-cocuklar-icin-oyuncak-ve-kitap-kampanyasi-2053536'
     ),    
     
-    Habericerigi(haberResim:NetworkImage('https://www.izmirbarosu.org.tr/images/haberler/2019411155133579.jpg'),
+    Habericerigi(haberResim:const NetworkImage('https://www.izmirbarosu.org.tr/images/haberler/2019411155133579.jpg'),
     haberBaslik: 'Kitap Bağışı Kampanyası',
     url: 'www.izmirbarosu.org.tr/HaberDetay/1537/kitap-bagisi-kampanyasi'
     ),
-    Habericerigi(haberResim:NetworkImage('https://www.t4haber.com.tr/images/haberler/2023/02/deprem-bolgesi-icin-quotkitap-kardesligine-sen-de-katilquot-kampanyasi-baslatildi.jpg'),
+    Habericerigi(haberResim:const NetworkImage('https://www.t4haber.com.tr/images/haberler/2023/02/deprem-bolgesi-icin-quotkitap-kardesligine-sen-de-katilquot-kampanyasi-baslatildi.jpg'),
     haberBaslik: 'Deprem bölgesi için "Kitap Kardeşliğine Sen de Katıl" Kampanyası başlatıldı',
     url: 'www.iha.com.tr/istanbul-haberleri/deprem-bolgesi-icin-kitap-kardesligine-sen-de-katil-kampanyasi-baslatildi-4201221/'
     )
@@ -79,8 +79,8 @@ Future<void> _launchUrl(String url) async {
           child: InkWell(
             
             onTap: () {
-              final Uri _url = Uri.parse(habericerikleri[index].url);
-              _launchUrl(_url.toString());
+              final Uri urls = Uri.parse(habericerikleri[index].url);
+              _launchUrl(urls.toString());
 
 
 //Link() denenebilir
@@ -111,7 +111,7 @@ MaterialPageRoute(builder: (context) => HaberTek(haber: haberler_list[index],)),
                       child: Container(
                         
                         width: 300,
-                        color: Color.fromARGB(255, 0, 0, 0).withOpacity(0.7),
+                        color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.7),
                         padding: const EdgeInsets.symmetric(vertical: 1),
                         child: Text(
                           habericerikleri[index].haberBaslik,
@@ -138,11 +138,11 @@ MaterialPageRoute(builder: (context) => HaberTek(haber: haberler_list[index],)),
 
         
       )      
-      : SizedBox(),
+      : const SizedBox(),
 
       
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             backgroundColor: Colors.green,
             label: 'Ara',

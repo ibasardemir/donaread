@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 class AdditionalUserInfoPage extends StatefulWidget {
   const AdditionalUserInfoPage({Key? key}) : super(key: key);
 
@@ -16,7 +17,7 @@ class _AdditionalUserInfoPageState extends State<AdditionalUserInfoPage> {
       appBar: AppBar(
         shadowColor: Colors.green,
         backgroundColor: Colors.green,
-        title: Text("Register"),
+        title: const Text("Register"),
       ),
       body: Container(
         height: double.infinity,
@@ -31,7 +32,7 @@ class _AdditionalUserInfoPageState extends State<AdditionalUserInfoPage> {
             _entryField("Phone Number", _controllerPhoneNumber),
             ElevatedButton(
               onPressed: () {},
-              child: Text("Save"),
+              child: const Text("Save"),
             ),
           ],
         ),
