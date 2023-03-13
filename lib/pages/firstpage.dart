@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'uploadpage.dart';
 import '../datas/kitap.dart';
 import "../managers/profilemanager.dart";
+import "profilepage.dart";
+import "haberler.dart";
+import "searchPage.dart";
+
 
     /*
   
@@ -24,8 +28,8 @@ class _MyAppState extends State<MyApp> {
 class FirstPage extends StatefulWidget {
   
   final List<Kitap> books;
-
   const FirstPage({required this.books, Key? key}) : super(key: key);
+  
 
   @override
   State<FirstPage> createState() => _FirstPageState();
@@ -38,14 +42,7 @@ class _FirstPageState extends State<FirstPage> {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
-      appBar: AppBar(
-        shadowColor: Colors.green,
-        backgroundColor: Colors.green,
-        title: const Text('Book Swap'),
-      ),
-      body: currentIndex == 2
-          ? Column(
+    return Column(
               children: [
                 SizedBox(
                   height: 150,
@@ -100,30 +97,7 @@ class _FirstPageState extends State<FirstPage> {
                   ),
                 ),
               ],
-            )
-          : const SizedBox(),
-      bottomNavigationBar: BottomNavigationBar(
-        // ignore: prefer_const_literals_to_create_immutables
-        items: [
-          const BottomNavigationBarItem(
-              backgroundColor: Colors.green,
-              label: 'Search',
-              icon: Icon(Icons.search)),
-          const BottomNavigationBarItem(label: 'Map', icon: Icon(Icons.map)),
-          const BottomNavigationBarItem(
-              label: 'Upload', icon: Icon(Icons.upload)),
-          const BottomNavigationBarItem(
-              label: 'Community', icon: Icon(Icons.people_alt)),
-          const BottomNavigationBarItem(
-              label: 'Profile', icon: Icon(Icons.person))
-        ],
-        currentIndex: currentIndex,
-        onTap: (int index) {
-          setState(() {
-            currentIndex = index;
-          });
-        },
-      ),
-    );
+            );
+          
   }
 }

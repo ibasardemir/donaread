@@ -10,17 +10,17 @@ import 'haberlisteler.dart';
 
 
 
-class FirstPageTo extends StatefulWidget {
-  const FirstPageTo({Key? key}) : super(key: key);
+class Haberler extends StatefulWidget {
+  const Haberler({Key? key}) : super(key: key);
 
   @override
-  _FirstPageToState createState() => _FirstPageToState();
+  _HaberlerState createState() => _HaberlerState();
 }
 
 //
 
 
-class _FirstPageToState extends State<FirstPageTo> {
+class _HaberlerState extends State<Haberler> {
   int currentIndex = 0;
   
 
@@ -55,13 +55,7 @@ Future<void> _launchUrl(String url) async {
   @override
   Widget build(BuildContext context) {
     return     
-    Scaffold(
-      appBar: AppBar(
-        title: const Center(child: Text('Haberler')),
-        backgroundColor: Colors.green,
-      ),
-      body: currentIndex==3 
-      ? 
+    
       
       SingleChildScrollView(
         
@@ -133,48 +127,13 @@ MaterialPageRoute(builder: (context) => HaberTek(haber: haberler_list[index],)),
       },
     ),
   ],
-),
+));
 
 
         
-      )      
-      : const SizedBox(),
+      
 
       
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            backgroundColor: Colors.green,
-            label: 'Ara',
-            icon: Icon(Icons.search),
-          ),
-          BottomNavigationBarItem(
-            label: 'Harita',
-            icon: Icon(Icons.map),
-          ),
-          BottomNavigationBarItem(
-            backgroundColor: Colors.green,
-            label: 'Yükle',
-            icon: Icon(Icons.upload),
-          ),
-          BottomNavigationBarItem(
-            label: 'Haberler',
-            icon: Icon(Icons.newspaper),
-            backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            label: 'Profil',
-            icon: Icon(Icons.person),
-            backgroundColor: Colors.green,
-          ),
-        ],
-        currentIndex: currentIndex,
-        onTap: (int index) {
-          setState(() {
-            currentIndex = index;
-          });
-        },
-      ),
-    );
+
   }
 }

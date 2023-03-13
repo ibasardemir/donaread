@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:sampleproject/pages/uploadpage.dart';
 import 'Kitap_detaylari.dart';
 import '../datas/kitap.dart';
+import "firstpage.dart";
+import "haberler.dart";
+import "profilepage.dart";
 
 /*
 class Kitap{
@@ -354,12 +358,14 @@ class _SearchPageToState extends State<SearchPageTo> {
            
       //Haber
       :currentIndex==3?
-       const Text("Haber")
+       const Haberler()
        
        
        
        //Diğer sayfalar
-       :const Text('Diğer sayfalar'),//haber
+       :currentIndex==2?const FirstPage(books: []): 
+       currentIndex==1? Container():
+       ProfilePage(),//haber
       
       
      

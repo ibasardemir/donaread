@@ -1,5 +1,8 @@
 import 'package:sampleproject/auth.dart';
-import 'package:sampleproject/pages/home_page.dart';
+
+import "package:sampleproject/pages/searchpage.dart";
+
+import "package:sampleproject/pages/firstpage.dart";
 import 'package:sampleproject/pages/login_register_page.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +20,7 @@ class _WidgetTreeState extends State<WidgetTree> {
       stream: Auth().authStateChanges,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return HomePage();
+          return  const SearchPageTo();
         } else {
           return const LoginPage();
         }
