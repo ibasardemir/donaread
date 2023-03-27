@@ -1,24 +1,31 @@
 
 import 'package:flutter/material.dart';
 import '../managers/profilemanager.dart';
+import "../datas/profile.dart";
 class ProfilePage extends StatelessWidget {
-  final int booksshared;
-  final int bookstaken;
-  final int booksdonated;
-  final int tokens;
-  final String profileImageUrl;
+   int booksshared;
+   int bookstaken;
+   int booksdonated;
+   int tokens;
+   Profile prof= Profilemanager.profile?? Profile("null", "0", "location");
+   String profileImageUrl;
   int savedpapers = 10;
   double savedcarbonemission = 0.5;
   double savedwater = 2.4;
 
   ProfilePage({super.key, 
-    this.booksshared = 100,
+    this.booksshared = 0,
     this.bookstaken = 50,
     this.booksdonated = 233,
     this.tokens = 20,
     this.profileImageUrl =
         'https://www.dlf.pt/dfpng/middlepng/247-2479526_round-profile-picture-png-transparent-png.png',
-  });
+  }){
+booksdonated= prof.booksdonated;
+booksshared = prof.booksshared;
+bookstaken = prof.bookstaken;
+tokens = prof.token;
+  }
 
   @override
   Widget build(BuildContext context) {

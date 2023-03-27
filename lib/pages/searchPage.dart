@@ -5,6 +5,7 @@ import '../datas/kitap.dart';
 import "firstpage.dart";
 import "haberler.dart";
 import "profilepage.dart";
+import "../managers/bookmanager.dart";
 
 /*
 class Kitap{
@@ -47,15 +48,17 @@ class _SearchPageToState extends State<SearchPageTo> {
   static List<Kitap> main_books_list = [
     Kitap(id:1,name:'Küçük Yaprağın Öyküsü',userLocation: 'İstanbul', condition:'İyi',isbn:0,uid:""/*'https://cdn.pixabay.com/photo/2023/01/31/05/59/zebra-7757193_960_720.jpg'*/)
   ];
+  //static List<Kitap> main_books_list = Bookmanager().viewBooks();
 
 
   List<Kitap> display_list = List.from(main_books_list);
  /////
 
 
-  void updateList(String value){
+  void updateList(String value) async{
     setState(() {
-      display_list = main_books_list.where((element) => element.name.toLowerCase().contains(value.toLowerCase())).toList();
+      List<Kitap> asd = Bookmanager().viewBooks() as List<Kitap>;
+      display_list = asd.where((element) => element.name.toLowerCase().contains(value.toLowerCase())).toList();
     });
   }
 
@@ -363,7 +366,7 @@ class _SearchPageToState extends State<SearchPageTo> {
        
        
        //Diğer sayfalar
-       :currentIndex==2?const FirstPage(books: []): 
+       :currentIndex==2? FirstPage(books: []): 
        currentIndex==1? Container():
        ProfilePage(),//haber
       

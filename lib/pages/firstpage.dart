@@ -27,8 +27,8 @@ class _MyAppState extends State<MyApp> {
   
 class FirstPage extends StatefulWidget {
   
-  final List<Kitap> books;
-  const FirstPage({required this.books, Key? key}) : super(key: key);
+   List<Kitap> books = [];
+   FirstPage({required this.books, Key? key}) : super(key: key);
   
 
   @override
