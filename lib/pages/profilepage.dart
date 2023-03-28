@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import '../managers/profilemanager.dart';
 import "../datas/profile.dart";
+import '../auth.dart';
 class ProfilePage extends StatelessWidget {
    int booksshared;
    int bookstaken;
@@ -31,6 +32,12 @@ tokens = prof.token;
   Widget build(BuildContext context) {
     final int totalbook = booksdonated + booksshared;
     return Scaffold(
+      appBar:  AppBar(actions: <Widget>[
+            IconButton(
+             icon:  const Icon(Icons.close),
+            onPressed: () =>Auth().signOut(),
+           ),
+         ],),
       body: Column(
         children: [
           Container(
