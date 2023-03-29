@@ -1,4 +1,3 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../auth.dart';
@@ -47,13 +46,11 @@ class LoginPageState extends State<LoginPage> {
   }
 
   Widget _title() {
-    return const Text("Firebase Auth");
+    return const Text("DonaRead");
   }
 
   Widget _entryField(
-    String title,
-    TextEditingController controller,bool paso
-  ) {
+      String title, TextEditingController controller, bool paso) {
     return TextField(
         controller: controller,
         obscureText: paso,
@@ -82,7 +79,7 @@ class LoginPageState extends State<LoginPage> {
         setState(() {
           Profilemanager();
           isLogin = !isLogin;
-          errorMessage= "";
+          errorMessage = "";
         });
       },
       child: Text(isLogin ? "Register instead" : "Login instead"),
@@ -93,6 +90,7 @@ class LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Container(child: Image.asset("assets/image.png")),
         title: _title(),
       ),
       body: Container(
@@ -103,8 +101,8 @@ class LoginPageState extends State<LoginPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              _entryField("email", _controllerEmail,false),
-              _entryField("password", _controllerPassword,true),
+              _entryField("email", _controllerEmail, false),
+              _entryField("password", _controllerPassword, true),
               _errorMessage(),
               _submitButton(),
               _loginOrRegistrationButton(),
