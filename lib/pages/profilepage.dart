@@ -1,45 +1,54 @@
-
 import 'package:flutter/material.dart';
 import '../managers/profilemanager.dart';
 import "../datas/profile.dart";
 import '../auth.dart';
+
 class ProfilePage extends StatelessWidget {
-   int booksshared;
-   int bookstaken;
-   int booksdonated;
-   int tokens;
-   Profile prof= Profilemanager.profile?? Profile("null", "0", "location");
-   String profileImageUrl;
+  int booksshared;
+  int bookstaken;
+  int booksdonated;
+  int tokens;
+  Profile prof = Profilemanager.profile ?? Profile("null", "0", "location");
+  String profileImageUrl;
   int savedpapers = 10;
   double savedcarbonemission = 0.5;
   double savedwater = 2.4;
 
-  ProfilePage({super.key, 
+  ProfilePage({
+    super.key,
     this.booksshared = 0,
     this.bookstaken = 50,
     this.booksdonated = 233,
     this.tokens = 20,
     this.profileImageUrl =
         'https://www.dlf.pt/dfpng/middlepng/247-2479526_round-profile-picture-png-transparent-png.png',
-  }){
-booksdonated= prof.booksdonated;
-booksshared = prof.booksshared;
-bookstaken = prof.bookstaken;
-tokens = prof.token;
+  }) {
+    booksdonated = prof.booksdonated;
+    booksshared = prof.booksshared;
+    bookstaken = prof.bookstaken;
+    tokens = prof.token;
   }
 
   @override
   Widget build(BuildContext context) {
     final int totalbook = booksdonated + booksshared;
     return Scaffold(
-      appBar:  AppBar(actions: <Widget>[
-            IconButton(
-             icon:  const Icon(Icons.close),
-            onPressed: () =>Auth().signOut(),
-           ),
-         ],),
+      //onPressed: () => Auth().signOut(),
+
       body: Column(
         children: [
+          Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                IconButton(
+                    icon: Icon(Icons.output, color: Colors.black),
+                    onPressed: () => Auth().signOut()),
+
+                SizedBox(width: 16.0), // Add a SizedBox with a width of 16.0
+              ],
+            ),
+          ),
           Container(
             padding: const EdgeInsets.all(16.0),
             child: Row(
@@ -117,13 +126,16 @@ tokens = prof.token;
                       style: TextStyle(fontSize: 30),
                     ),
                     Text(
-                        "\n     ${savedpapers * totalbook} " 'papers are saved',
+                        "\n     ${savedpapers * totalbook} "
+                        'kg papers are saved',
                         style: const TextStyle(fontSize: 18)),
                     Text(
-                        "\n     ${savedcarbonemission * totalbook} " 'kg of CO2 emission is prevented',
+                        "\n     ${savedcarbonemission * totalbook} "
+                        'kg of CO2 emission is prevented',
                         style: const TextStyle(fontSize: 18)),
                     Text(
-                        "\n     ${savedcarbonemission * totalbook} " 'L of industrial water is prevented',
+                        "\n     ${savedcarbonemission * totalbook} "
+                        'L of industrial water is prevented',
                         style: const TextStyle(fontSize: 18)),
                   ],
                 ),
