@@ -151,7 +151,7 @@ class _SearchPageToState extends State<SearchPageTo> {
                             borderRadius: BorderRadius.circular(8.0),
                             borderSide: BorderSide.none,
                           ),
-                          hintText: 'Cesur Yeni Dünya',
+                          hintText: 'Kitap ismi ile arama',
                           prefixIcon: const Icon(Icons.search),
                           prefixIconColor: Colors.black,
                           suffixIcon: IconButton(
