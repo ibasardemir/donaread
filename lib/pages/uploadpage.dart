@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../datas/kitap.dart';
 
-
 class UploadPage extends StatefulWidget {
   final List<Kitap> books;
   final void Function(String name, String isbn, String condition) onSubmit;
@@ -44,6 +43,7 @@ class _UploadPageState extends State<UploadPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Container(child: Image.asset("assets/image.png")),
         shadowColor: Colors.green,
         backgroundColor: Colors.green,
         title: const Text('Upload Page'),
@@ -128,4 +128,3 @@ class _UploadPageState extends State<UploadPage> {
     );
   }
 }
-
