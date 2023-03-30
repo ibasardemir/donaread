@@ -158,6 +158,7 @@ class _AdditionalUserInfoPageState extends State<AdditionalUserInfoPage> {
                 String uid = FirebaseAuth.instance.currentUser!.uid;
                 Profile profile =
                     Profile(name, surname, phoneNumber, uid, location);
+                Navigator.pop(context);
                 // upload the profile to a database or file as needed
               },
               child: const Text("Save"),
