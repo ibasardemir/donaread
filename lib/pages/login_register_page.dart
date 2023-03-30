@@ -42,6 +42,7 @@ class LoginPageState extends State<LoginPage> {
         context,
         MaterialPageRoute(builder: (context) => AdditionalUserInfoPage()),
       );
+      
     } on FirebaseException catch (e) {
       setState(() {
         errorMessage = e.message;
