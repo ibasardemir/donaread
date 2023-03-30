@@ -10,9 +10,9 @@ class ProfilePage extends StatelessWidget {
   int tokens;
   Profile prof = Profilemanager.profile ?? Profile("null", "0", "location");
   String profileImageUrl;
-  int savedpapers = 10;
-  double savedcarbonemission = 0.5;
-  double savedwater = 2.4;
+  double savedpapers = 0.9;
+  double savedcarbonemission = 1.125;
+  double savedwater = 11.25;
 
   ProfilePage({
     super.key,
