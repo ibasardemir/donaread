@@ -15,5 +15,15 @@ class Kitap {
     uid = data["uid"],
     userLocation = data["user_location"],
     condition = data["condition"];
+Map toweb(){
+Map map = Map();
+map["id"]=id;
+map["name"]=name;
+map["isbn"]=isbn;
+map["userlocation"]="istanbul";
+map["condition"]=condition;
+
+return map ;
+}
 }
 

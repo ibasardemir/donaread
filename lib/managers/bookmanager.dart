@@ -1,6 +1,8 @@
 import 'package:sampleproject/auth.dart';
 import 'package:sampleproject/services/connector.dart';
 import "package:sampleproject/datas/kitap.dart";
+import 'dart:developer';
+
 
 
 class Bookmanager{
@@ -14,7 +16,9 @@ connector.rs("book").then((dynamic n) {
       });
 return kitap;
 }
-Future<void> publishBook() async{
+Future<void> publishBook(Kitap book) async{
+connector.ws("book/${book.id}", book.toweb());
+log("sas");
 
 
 }

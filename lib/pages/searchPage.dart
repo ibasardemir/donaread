@@ -164,13 +164,13 @@ class _SearchPageToState extends State<SearchPageTo> {
                                     return StatefulBuilder(
                                       builder: (context, setState) {
                                         return AlertDialog(
-                                          title: Text('Filtrele'),
+                                          title: const Text('Filtrele'),
                                           content: Column(
                                             mainAxisSize: MainAxisSize.min,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              Text(
+                                              const Text(
                                                 "Kitap Durumu",
                                                 style: TextStyle(
                                                   fontWeight: FontWeight.bold,
@@ -178,7 +178,7 @@ class _SearchPageToState extends State<SearchPageTo> {
                                                 ),
                                               ),
                                               CheckboxListTile(
-                                                title: Text('İyi'),
+                                                title: const Text('İyi'),
                                                 value: isGoodChecked,
                                                 activeColor: Colors.white,
                                                 checkColor: Colors.green,
@@ -190,7 +190,7 @@ class _SearchPageToState extends State<SearchPageTo> {
                                                 },
                                               ),
                                               CheckboxListTile(
-                                                title: Text('Orta'),
+                                                title: const Text('Orta'),
                                                 value: isAverageChecked,
                                                 activeColor: Colors.white,
                                                 checkColor: Colors.green,
@@ -202,7 +202,7 @@ class _SearchPageToState extends State<SearchPageTo> {
                                                 },
                                               ),
                                               CheckboxListTile(
-                                                title: Text('Kötü'),
+                                                title: const Text('Kötü'),
                                                 value: isBadChecked,
                                                 activeColor: Colors.white,
                                                 checkColor: Colors.green,
@@ -220,7 +220,7 @@ class _SearchPageToState extends State<SearchPageTo> {
                                               onPressed: () {
                                                 Navigator.of(context).pop();
                                               },
-                                              child: Text('Tamam'),
+                                              child: const Text('Tamam'),
                                             ),
                                           ],
                                         );

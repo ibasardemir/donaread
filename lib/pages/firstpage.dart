@@ -5,6 +5,7 @@ import "../managers/profilemanager.dart";
 import "profilepage.dart";
 import "haberler.dart";
 import "searchPage.dart";
+import "../managers/bookmanager.dart";
 
 
     /*
@@ -65,6 +66,17 @@ class _FirstPageState extends State<FirstPage> {
                                         name: name,
                                         isbn: int.parse(isbn),
                                         condition: condition));
+                                        Bookmanager managerb= Bookmanager();
+                                        managerb.publishBook(Kitap(
+                                        id:DateTime.now().millisecondsSinceEpoch+Profilemanager.profile.hashCode,//sıkıntılı
+                                        uid: Profilemanager.profile?.uid??"", //sıkıntılı
+                                        userLocation: Profilemanager.profile?.uid??"",//sıkıntılı
+                                        name: name,
+                                        isbn: int.parse(isbn),
+                                        condition: condition));
+                                        Profilemanager.profile!.booksshared+=1;
+                                        Profilemanager.profile!.token+=1;
+                                        if(Profilemanager.profile!=null){Profilemanager.register(Profilemanager.profile!);}
                                   });
                                 },
                                 books: widget

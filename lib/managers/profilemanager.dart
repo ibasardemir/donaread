@@ -20,9 +20,10 @@ class Profilemanager{
     try {
       //final dynamic n = connector.rs("profile/$uid");
       connector.rs("profile/$uid").then((dynamic n) {
-        log("$n @pmanager 23");
-        log("${n["name"]} @pmanager 24");
       profile = Profile.fromweb(n);
+      
+      profile??= n as Profile;
+      
       log("${profile?.name}");
       });
       

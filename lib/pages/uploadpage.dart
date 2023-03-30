@@ -31,7 +31,6 @@ class _UploadPageState extends State<UploadPage> {
       String name = _nameController.text;
       String isbn = _isbnController.text;
       String condition = _condition;
-      print('Uploading book: $name, ISBN: $isbn, Condition: $condition');
       // Add the uploaded book to the list
       widget.onSubmit(name, isbn, condition); // add the book to the books list
       // pop the current screen and return to the first page
