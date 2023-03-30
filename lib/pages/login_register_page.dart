@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../auth.dart';
 import "../managers/profilemanager.dart";
+import '../datas/profile.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -126,6 +127,7 @@ class _AdditionalUserInfoPageState extends State<AdditionalUserInfoPage> {
   final TextEditingController _controllerName = TextEditingController();
   final TextEditingController _controllerSurname = TextEditingController();
   final TextEditingController _controllerPhoneNumber = TextEditingController();
+  final TextEditingController _controllerLocation = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -146,9 +148,19 @@ class _AdditionalUserInfoPageState extends State<AdditionalUserInfoPage> {
             _entryField("Name", _controllerName),
             _entryField("Surname", _controllerSurname),
             _entryField("Phone Number", _controllerPhoneNumber),
+            _entryField("Location", _controllerLocation),
             ElevatedButton(
-              onPressed: () {},
-              child: Text("Save"),
+              onPressed: () {
+                String name = _controllerName.text;
+                String surname = _controllerSurname.text;
+                String phoneNumber = _controllerPhoneNumber.text;
+                String location = _controllerLocation.text;
+                String uid = FirebaseAuth.instance.currentUser!.uid;
+                Profile profile =
+                    Profile(name, surname, phoneNumber, uid, location);
+                // upload the profile to a database or file as needed
+              },
+              child: const Text("Save"),
             ),
           ],
         ),
