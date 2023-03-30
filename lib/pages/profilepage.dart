@@ -8,11 +8,12 @@ class ProfilePage extends StatelessWidget {
   int bookstaken;
   int booksdonated;
   int tokens;
-  Profile prof = Profilemanager.profile ?? Profile("null", "0", "location");
+  Profile prof =
+      Profilemanager.profile ?? Profile("null", "null", "0", "0", "location");
   String profileImageUrl;
-  double savedpapers = 0.9;
-  double savedcarbonemission = 1.125;
-  double savedwater = 11.25;
+  int savedpapers = 10;
+  double savedcarbonemission = 0.5;
+  double savedwater = 2.4;
 
   ProfilePage({
     super.key,
@@ -127,15 +128,15 @@ class ProfilePage extends StatelessWidget {
                     ),
                     Text(
                         "\n     ${savedpapers * totalbook} "
-                        'kg papers are saved',
+                        'kg of paper are saved',
                         style: const TextStyle(fontSize: 18)),
                     Text(
                         "\n     ${savedcarbonemission * totalbook} "
-                        'kg of CO2 emission is prevented',
+                        'kg of CO2 emission are prevented',
                         style: const TextStyle(fontSize: 18)),
                     Text(
                         "\n     ${savedcarbonemission * totalbook} "
-                        'L of industrial water is prevented',
+                        'L of industrial water are prevented',
                         style: const TextStyle(fontSize: 18)),
                   ],
                 ),
