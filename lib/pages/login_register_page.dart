@@ -3,21 +3,21 @@ import 'package:flutter/material.dart';
 import '../auth.dart';
 import "../managers/profilemanager.dart";
 import '../datas/profile.dart';
-
+// LoginPage is a StatefulWidget that allows users to either login or register
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
   State<LoginPage> createState() => LoginPageState();
 }
-
+// LoginPageState is the state of the LoginPage widget
 class LoginPageState extends State<LoginPage> {
   String? errorMessage = "";
   bool isLogin = true;
 
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerPassword = TextEditingController();
-
+// sign in with email and password
   Future<void> signInWithEmailAndPassword() async {
     try {
       await Auth().signInWithEmailAndPassword(
@@ -31,13 +31,14 @@ class LoginPageState extends State<LoginPage> {
       });
     }
   }
-
+// create user with email and password
   Future<void> createUserWithEmailAndPassword() async {
     try {
       await Auth().createUserWithEmailAndPassword(
         email: _controllerEmail.text,
         password: _controllerPassword.text,
       );
+      // navigate to the AdditionalUserInfoPage widget to get additional user information
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => AdditionalUserInfoPage()),
@@ -53,7 +54,7 @@ class LoginPageState extends State<LoginPage> {
   Widget _title() {
     return const Text("DonaRead");
   }
-
+// widget that displays a text field with the specified title and text controller
   Widget _entryField(
       String title, TextEditingController controller, bool paso) {
     return TextField(
@@ -65,7 +66,7 @@ class LoginPageState extends State<LoginPage> {
           labelText: title,
         ));
   }
-
+// widget that displays the error message, if any
   Widget _errorMessage() {
     return Text(errorMessage == "" ? "" : "Humm ? $errorMessage");
   }
@@ -77,7 +78,7 @@ class LoginPageState extends State<LoginPage> {
       child: Text(isLogin ? "Login" : "Register"),
     );
   }
-
+// widget that displays the login or register toggle button
   Widget _loginOrRegistrationButton() {
     return TextButton(
       onPressed: () {
@@ -90,7 +91,7 @@ class LoginPageState extends State<LoginPage> {
       child: Text(isLogin ? "Register instead" : "Login instead"),
     );
   }
-
+// build method that creates the LoginPage widget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
