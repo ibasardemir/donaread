@@ -25,9 +25,9 @@ class _MyAppState extends State<MyApp> {
 }
   */
   
-  
+// Define a stateful widget for the first page  
 class FirstPage extends StatefulWidget {
-  
+  // Define a list of books and pass it to the constructor
    List<Kitap> books = [];
    FirstPage({required this.books, Key? key}) : super(key: key);
   
@@ -53,6 +53,7 @@ class _FirstPageState extends State<FirstPage> {
                     children: [
                       ElevatedButton(
                         onPressed: () {
+                            // Navigate to the UploadPage and pass the uploaded book to the list
                           Navigator.of(context).push(
                             MaterialPageRoute(builder: (BuildContext context) {
                               return UploadPage(
@@ -90,6 +91,7 @@ class _FirstPageState extends State<FirstPage> {
                     ],
                   ),
                 ),
+                // Display the list of books
                 Expanded(
                   child: ListView.builder(
                     itemCount: widget.books.length,
