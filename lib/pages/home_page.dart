@@ -6,16 +6,16 @@ import '../datas/profile.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
-  final User? user = Auth().currentUser;
-  final Profilemanager pmanager = Profilemanager();
-  Profile? profile = Profilemanager.profile;
+  final User? user = Auth().currentUser; // current user
+  final Profilemanager pmanager = Profilemanager(); // profile manager instance
+  Profile? profile = Profilemanager.profile; // profile instance
 
   Future<void> signOut() async {
-    await Auth().signOut();
+    await Auth().signOut(); // sign out method
   }
 
   Widget _title() {
-    return const Text("Firebase Auth");
+    return const Text("Firebase Auth"); // app bar title
     //!Başlık
   }
 
