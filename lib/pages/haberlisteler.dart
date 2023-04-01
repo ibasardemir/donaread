@@ -2,8 +2,9 @@
 import 'package:flutter/material.dart';
 import 'habericerigi.dart';
 
-
+// list of news items
    final List<Habericerigi> habericerikleri = [    
+   // creating a new instance of Habericerigi class with values for each news item
     Habericerigi(haberResim:const NetworkImage('https://www.akhisarhaber.net/images/haberler/2023/02/depremzede-cocuklar-icin-oyunca-ve-kitap-bagis-kampanyasi-basladi-4867.png'),
     haberBaslik: 'Depremzede Çocuklar İçin Oyuncak Ve Kitap Bağış Kampanyası Başladı',
     url:'www.cumhuriyet.com.tr/turkiye/depremzede-cocuklar-icin-oyuncak-ve-kitap-kampanyasi-2053536'
