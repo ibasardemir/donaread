@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import '../managers/profilemanager.dart';
 import "../datas/profile.dart";
 import '../auth.dart';
-
+// Create a stateless widget called ProfilePage
 class ProfilePage extends StatelessWidget {
+// Initialize default values for various profile information
   int booksshared;
   int bookstaken;
   int booksdonated;
@@ -15,6 +16,7 @@ class ProfilePage extends StatelessWidget {
   double savedcarbonemission = 0.5;
   double savedwater = 2.4;
 
+// Create a constructor for the ProfilePage class to accept values for profile information
   ProfilePage({
     super.key,
     this.booksshared = 0,
@@ -24,20 +26,22 @@ class ProfilePage extends StatelessWidget {
     this.profileImageUrl =
         'https://www.dlf.pt/dfpng/middlepng/247-2479526_round-profile-picture-png-transparent-png.png',
   }) {
+  // If the profile exists, update the values with the profile information
     booksdonated = prof.booksdonated;
     booksshared = prof.booksshared;
     bookstaken = prof.bookstaken;
     tokens = prof.token;
   }
-
+// Build the UI for the ProfilePage
   @override
   Widget build(BuildContext context) {
     final int totalbook = booksdonated + booksshared;
     return Scaffold(
       //onPressed: () => Auth().signOut(),
-
+     // Create a column to organize the UI elements
       body: Column(
         children: [
+        // Create a container for the logout button and add it to the top right of the screen
           Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -50,6 +54,7 @@ class ProfilePage extends StatelessWidget {
               ],
             ),
           ),
+          // Create a container for the user's profile picture and token count
           Container(
             padding: const EdgeInsets.all(16.0),
             child: Row(
@@ -119,7 +124,7 @@ class ProfilePage extends StatelessWidget {
             children: [
               Expanded(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start, // add this line
+                  mainAxisAlignment: MainAxisAlignment.start, 
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
