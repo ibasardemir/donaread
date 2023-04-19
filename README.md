@@ -191,7 +191,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 İbrahim - ibrahim.demir@sabanciuniv.edu
 
-Project Link: [https://github.com/ibasardemir/donnaread](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/ibasardemir/donaread](https://github.com/github_username/repo_name)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
