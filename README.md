@@ -75,7 +75,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NHIw_gJwl_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+https://www.youtube.com/embed/NHIw_gJwl_E
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -121,7 +121,7 @@ No prerequisites if you only want to use the app
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NHIw_gJwl_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+https://www.youtube.com/embed/NHIw_gJwl_E
 
 
 <!-- ROADMAP -->
