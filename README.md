@@ -26,8 +26,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/ibasardemir/donaread">
+    <img src="assets/image.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Donaread</h3>
@@ -35,7 +35,7 @@
   <p align="center">
     Share your fun!
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/ibasardemir/donaread"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/github_username/repo_name">View Demo</a>
@@ -75,7 +75,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NHIw_gJwl_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
