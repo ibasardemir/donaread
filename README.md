@@ -75,7 +75,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-https://www.youtube.com/embed/NHIw_gJwl_E
+click <a href="https://www.youtube.com/embed/NHIw_gJwl_E">here
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -205,9 +205,9 @@ Project Link: [https://github.com/ibasardemir/donaread](https://github.com/githu
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/Flutter-20232A?style=for-the-badge&logo=flutter&logoColor=61DAFB
-[React-url]: https://reactjs.org/
+[React-url]: https://flutter.dev/
 [Vue.js]: https://img.shields.io/badge/Firebase-35495E?style=for-the-badge&logo=firebase&logoColor=orange
-[Vue-url]: https://vuejs.org/
+[Vue-url]: https://firebase.google.com/
 [Angular.io]: https://img.shields.io/badge/flutter?style=for-the-badge&logo=angular&logoColor=white
 [Angular-url]: https://angular.io/
 [Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
